@@ -1,7 +1,25 @@
 console.log('Starting notes.js');
 
+const fs = require('fs');
+
 var addNote = (title, body) =>{
-    console.log('Adding note', title, body);
+    var notes = [];
+    var note = {
+        title: title,
+        body : body
+    };
+
+    // Below line of code reads the data from the note-data.json file and converts into object 
+    // from which we can access the properties of the object
+    try{
+        var notesString = fs.readFileSync('notes-data.json');
+        notes = JSON.parse(notesString);
+    } catch(e){
+
+    }
+    //Below line of code saves our data into a notes-data.json file
+    notes.push(note);
+    fs.writeFileSync('notes-data.json', JSON.stringify(notes));
 };
 var getAll =() =>{
     console.log("Getting all nodes");
