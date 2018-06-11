@@ -4,7 +4,7 @@ const fs = require('fs');// 3rd party modules
 const _ = require('lodash');
 const yargs = require('yargs');
 
-const notes = require('./notes.js');//modules we created
+const notes = require('./notes1.js');//modules we created
 
 
 const argv = yargs.argv;// returns an array containing the command line arguments passed to it
@@ -14,15 +14,7 @@ console.log('Command:', command);
 console.log('Yargs', argv);
 
 if(command === 'add'){
-    var note = notes.addNote(argv.title, argv.body);
-    if (note) {
-        console.log("note created");
-        console.log("Content of Note created are:- ");
-        console.log("Title: ", note.title);
-        console.log("Body: ", note.body);
-    } else{
-        console.log("Note already created with same title");
-    }
+    notes.addNote(argv.title, argv.body);
 }   else if(command === 'list'){
     notes.getAll();
 }   else if(command === 'read'){
