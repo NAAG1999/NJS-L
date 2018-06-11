@@ -43,7 +43,11 @@ var getAll =() =>{
     console.log("Getting all nodes");
 };
 var getNote = (title) =>{
-    console.log('Getting note', title);
+    var notes = fetchNotes();
+    //checking or filtering the notes fetched from the user
+    var filteredNotes = notes.filter((note) => note.title === title);
+    return filteredNotes[0];
+    saveNotes(filteredNotes);
 };
 
 var removeNote = (title) =>{
