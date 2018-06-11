@@ -9,8 +9,9 @@ const notes = require('./notes.js');
 // var res = notes.addNote();
 // console.log(res);
 
-var result = notes.add(9,-1);
-console.log(result);
+//Given below is method 2 to do above 
+// var result = notes.add(9,-1);
+// console.log(result);
 
-//Given below is method 2 to do above (more sexy)
-//console.log('Result:',notes.add(9,-2));
+
+console.log('Result:',notes.add(9,-2));
