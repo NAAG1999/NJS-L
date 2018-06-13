@@ -6,5 +6,5 @@ setTimeout(() =>{
 
 setTimeout(() =>{
     console.log('Second Time out delay works!!')
-}, 0);
+}, 3000);
 console.log('Finsihing app');
