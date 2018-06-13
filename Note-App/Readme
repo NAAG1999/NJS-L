@@ -1,0 +1,33 @@
+Note app can be used to store your reminders at one place.
+To start using App, clone the app.js and note.js files on your system.
+Open the cmd line at your destination folder and run the app using following command:
+
+node app.js
+
+#Debugging Navigations:
+
+To start debugging your app do the following.
+
+node inspect app.js
+
+( to start debugging process )
+
+// if you want to list out in a wrapped manner do the following 
+
+list(n); where n is the number of lines you want to wrap the code of the app.js file
+
+after this,  
+
+n
+
+to check your first line 
+
+and then go line by line using n.
+
+To complete the process, use 'c'.
+
+To use the debugger tool use repl tool using 
+
+repl
+
+and then access the contents of the app.js and manipulate it and test the app. 
