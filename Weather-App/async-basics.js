@@ -5,6 +5,6 @@ setTimeout(() =>{
 }, 2000); // time to be given in mili seconds
 
 setTimeout(() =>{
-    console.log('Second Time out delay works!!')
+    console.log('Second Time out delay works!!');
 }, 3000);
 console.log('Finsihing app');
