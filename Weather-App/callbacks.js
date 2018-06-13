@@ -3,6 +3,7 @@ var getUser = (id, callback) => {
         id: id,
         name: 'Nilesh'
     };
+    callback();
 };
 
 getUser(201, (user) =>{
