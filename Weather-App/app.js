@@ -1,5 +1,23 @@
 const request = require('request');
 
+const yargs = require('yargs');
+
+constargv = yargs.options({
+    a: {
+        demand: true,
+        alias: 'address',
+        desc: 'Address to fetch weather for ',
+        string: true 
+    }
+})
+
+.help()
+.alias('help','h')
+.argv;
+
+console.log(argv);
+
+
 request({
     url: 'https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA',
     json: true 
