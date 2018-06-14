@@ -15,14 +15,19 @@ constargv = yargs.options({
 .alias('help','h')
 .argv;
 
-console.log(argv);
-
+var encodedAddress = encodeURIComponent(argv.address);
 
 request({
-    url: 'https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA',
+    url: 'https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}',
     json: true 
 }, (error, response, body) =>{
-    console.log('Address: ${body.results[0].formatted_address}');
+    if (error){
+        console.log('Unable to connect to google servers');
+    }else if(body.status === 'ZERO_RESULTS'){
+            console.log('unable to find the address');
+        }else if(body.status === 'OK'){
+            console.log('Address: ${body.results[0].formatted_address}');
+        }
 });
 //in the console log statement we can swap body with error, response and body itself, to print the required element in our output
 //body is a part of http request: core data that comes from the http request
