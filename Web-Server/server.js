@@ -10,10 +10,20 @@ app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'hbs');
 
+hbs.registerHelper('getCurrentYear', () =>{
+
+    return new Date().getFullYear()
+})
+
+
+hbs.registerHelper('screamIt', function(text){
+    return text.toUpperCase();
+})
+
 app.get('/', function(req, res){
     res.render('home.hbs', {
         pageTitle: 'Welcome Page',
-        currentYear: new Date().getFullYear(),
+        //currentYear: new Date().getFullYear(),
         welcomeMessage: 'Hello User'
     });
 })
@@ -21,7 +31,7 @@ app.get('/', function(req, res){
 app.get('/about', function(req,res){
     res.render('about.hbs',{    //injecting data using render method
         pageTitle: 'About Page',
-        currentYear: new Date().getFullYear()
+        //currentYear: new Date().getFullYear()
     });
 })
 
