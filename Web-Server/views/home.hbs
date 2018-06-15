@@ -6,11 +6,7 @@
     </head>
     <body>
         <h1>{{pageTitle}}</h1>
-        <footer>
-            <p>
-                Copyright {{currentYear}} 
-            </p>
-        </footer>
+        {{> footer}} <!--method to call our footer.hbs partial file-->
             <p>
                 {{welcomeMessage}} 
             </p>
