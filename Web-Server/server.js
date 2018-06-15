@@ -14,4 +14,11 @@ app.get('/', function(req, res){
     });
 })
 
+app.get('/bad', function(req,res){
+    res.send({
+        errorMessage:'Bad Request 404'
+    });
+})
+
 app.listen(3000);
+
