@@ -17,7 +17,7 @@ app.use(function (req, res, next) {
     console.log(log1, log2, log3);
     fs.appendFileSync('server.log', (log1+ log2 +log3) +'\n', function(err){
             if(err){
-                console.log('Unable to append to server.log')
+                console.log('**Unable to append to server.log**')
             }
     });
     next();
