@@ -1,6 +1,8 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+
+const port = process.env.PORT || 3000;
 //'use strict';
 var app = express();
 
@@ -34,7 +36,6 @@ hbs.registerHelper('getCurrentYear', () =>{
     return new Date().getFullYear()
 })
 
-
 hbs.registerHelper('screamIt', function(text){
     return text.toUpperCase();
 })
@@ -60,8 +61,9 @@ app.get('/bad', function(req,res){
     });
 });
 
-app.listen(3000, function(){
-    console.log('server is up on port 3000');
+
+app.listen(port, function(){
+    console.log('server is up on port ' + port );
 });
 
 //NOTE: When using footers, when we are restarting our server, then in the terminal we have to use the command
