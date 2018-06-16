@@ -1,24 +1,32 @@
 const express = require('express');
 const hbs = require('hbs');
-
+const fs = require('fs');
+//'use strict';
 var app = express();
 
 //partials are used to re-use that  piece of info from our view files
 hbs.registerPartials(__dirname + '/views/partials')
 
-app.use(express.static(__dirname + '/public'));
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     var now = new Date().toString();
-    console.log('${now}:');
+    var log1 = now;
+    var log2 = req.method;
+    var log3 = req.url;
+    //console.log(now);
+    console.log(log1, log2, log3);
+    fs.appendFileSync('server.log', (log1+ log2 +log3) +'\n', function(err){
+            if(err){
+                console.log('Unable to append to server.log')
+            }
+    });
     next();
-})
+});
+// app.use(function(req, res, next){
+//     res.render('maintenance.hbs');
+// });
 
-// app.use((req, res, next) =>{
-//     var now = new Date().toString();
-//     console.log('${now}:');
-//     next();
-// })
+app.use(express.static(__dirname + '/public'));
 
 app.set('vie engine', 'hbs');
 
