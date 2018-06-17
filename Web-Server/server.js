@@ -12,12 +12,9 @@ hbs.registerPartials(__dirname + '/views/partials')
 
 app.use(function (req, res, next) {
     var now = new Date().toString();
-    var log1 = now;
-    var log2 = req.method;
-    var log3 = req.url;
-    //console.log(now);
-    console.log(log1, log2, log3);
-    fs.appendFileSync('server.log', (log1+ log2 +log3) +'\n', function(err){
+    var log = `${now}: ${req.method} ${req.url}`;
+    console.log(log);
+    fs.appendFileSync('server.log', log +'\n', function(err){
             if(err){
                 console.log('**Unable to append to server.log**')
             }
