@@ -8,25 +8,34 @@ var connection = new Sequelize('demo_schema', 'root', '', {
 
 var Article = connection.define('article',{
     title: Sequelize.STRING,
-    body: Sequelize.TEXT
+    //body: Sequelize.TEXT
+    body :{
+      type: Sequelize.TEXT,
+    }
 });
 
-connection.sync().then(function(){
-  Article.create({
-    title: 'demo title',  
-    body: 'Lorem ipsum fdsadsd'
-  });
-});
 
 connection.sync().then(function(){
-  Article.create({
-    title: 'demo title',  
-    body: 'asdad Lorem ipsum fdsadsd'
-  });
-});
 
-connection.sync().then(function(){
-  Article.findAll().then(function(articles){
-    console.log(articles.length);
-  });
-});
+})
+
+
+// connection.sync().then(function(){
+//   Article.create({
+//     title: 'demo title',  
+//     body: 'Lorem ipsum fdsadsd'
+//   });
+// });
+
+// connection.sync().then(function(){
+//   Article.create({
+//     title: 'demo title',  
+//     body: 'asdad Lorem ipsum fdsadsd'
+//   });
+// });
+
+// connection.sync().then(function(){
+//   Article.findAll().then(function(articles){
+//     console.log(articles.length);
+//   });
+// });
