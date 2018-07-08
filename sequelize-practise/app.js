@@ -52,7 +52,7 @@ connection
     })
     .then(function(){
       return Article.create({
-        title: "lnfskjvbxcbas",
+        title: "lnfskjvasasdbxcbas",
         slug: 'wibble',
         body: 'Wooble'
     })
