@@ -1,7 +1,10 @@
 var Sequelize = require('sequelize');
 
 //var connection = new Sequelize('demo_schema', 'root', ''); This method is deprecated
-
+var connection = new Sequelize('demo_schema', 'root', '', {
+    host: 'localhost',
+    dialect: 'mysql',
+  });
 
 var Article = connection.define('article',{
     slug:{
@@ -33,7 +36,11 @@ connection
         force: true
     })
     .then(function(){
-
+        Article.create({
+            slug: 'Some slug',
+            title: 'Some Title',
+            body: 'Some body'
+        })
     })
     .catch(function(error){
         console.log(error);
