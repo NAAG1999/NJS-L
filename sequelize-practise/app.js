@@ -16,14 +16,31 @@ var Article = connection.define('article',{
     title: {
       type: Sequelize.STRING,
       unique: true,
-      allowNull: false // That title is a must required thing
+      //allowNull: false, // That title is a must required thing
+      validate:{
+        len: {
+          args: [10, 150],
+          msg: 'Please enter a valid title'
+        }
+      }
     },
     //body: Sequelize.TEXT
     body :{
       type: Sequelize.TEXT,
-      defaultValue: 'Coming soon...'   //will assume a defualt value if nothing supplied as body
-    }
-  },{
+      defaultValue: 'Coming soon...',   //will assume a defualt value if nothing supplied as body
+      validate: {
+        startsWithUpper: function(bodyVal){
+          var first = bodyVal.charAt(0);
+          var startsWithUpper = first === first.toUpperCase();
+          if(!startsWithUpper){
+            throw new Error("First letter must be capital letter.")
+          }else{
+              //....
+            }
+          }
+        }
+      }
+},{
       timestamps : false // disables the timestamps from the databse
 });
 // NOTE: sync function can not update the table, it can only create table ;)
@@ -34,7 +51,11 @@ connection
       logging: console.log()  
     })
     .then(function(){
-    
+      return Article.create({
+        title: "lnfskjvbxcbas",
+        slug: 'wibble',
+        body: 'wooble'
+    })
     })
     .catch(function(error){
       console.log(error);
