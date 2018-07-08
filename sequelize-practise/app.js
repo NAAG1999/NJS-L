@@ -25,8 +25,8 @@ connection.sync().then(function(){
   });
 });
 
-// connection.sync().then(function(){
-//   Article.findAll().then(function(articles){
-//     console.log(articles.length);
-//   });
-// });
+connection.sync().then(function(){
+  Article.findAll().then(function(articles){
+    console.log(articles.length);
+  });
+});
