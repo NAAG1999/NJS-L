@@ -54,7 +54,7 @@ connection
       return Article.create({
         title: "lnfskjvbxcbas",
         slug: 'wibble',
-        body: 'wooble'
+        body: 'Wooble'
     })
     })
     .catch(function(error){
