@@ -28,12 +28,17 @@ var Article = connection.define('article',{
 });
 // NOTE: sync function can not update the table, it can only create table ;)
 
-connection.sync({
-  force : true,
-  logging: console.log()  
-}).then(function(){
-
-})
+connection
+    .sync({
+      force : true,
+      logging: console.log()  
+    })
+    .then(function(){
+    
+    })
+    .catch(function(error){
+      console.log(error);
+    });
 
 
 // connection.sync().then(function(){
