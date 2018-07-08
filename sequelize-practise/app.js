@@ -7,6 +7,10 @@ var connection = new Sequelize('demo_schema', 'root', '', {
 });
 
 var Article = connection.define('article',{
+    slug:{
+      type: Sequelize.STRING,
+      //primaryKey : true
+    },
     title: {
       type: Sequelize.STRING,
       unique: true,
