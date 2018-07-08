@@ -8,6 +8,7 @@ var connection = new Sequelize('demo_schema', 'root', '', {
 
 var Article = connection.define('article',{
     slug:{
+        defaultValue: 'something',
         type: Sequelize.STRING,
         primaryKey: true
     },
@@ -32,7 +33,9 @@ connection
                 body: "Some body"
             }
         }
-    Article.create(req.body).then(function(insertedArticle){
+    Article.create(req.body, {
+        fields : ['title', 'body']
+    }).then(function(insertedArticle){
         console.log(insertedArticle.defaultValues);
         })
     })  
