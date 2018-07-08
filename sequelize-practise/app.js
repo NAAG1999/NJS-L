@@ -7,15 +7,25 @@ var connection = new Sequelize('demo_schema', 'root', '', {
 });
 
 var Article = connection.define('article',{
-    title: Sequelize.STRING,
+    title: {
+      type: Sequelize.STRING,
+      unique: true,
+      allowNull: false // That title is a must required thing
+    },
     //body: Sequelize.TEXT
     body :{
       type: Sequelize.TEXT,
+      defaultValue: 'Coming soon...'   //will assume a defualt value if nothing supplied as body
     }
+  },{
+      timestamps : false // disables the timestamps from the databse
 });
+// NOTE: sync function can not update the table, it can only create table ;)
 
-
-connection.sync().then(function(){
+connection.sync({
+  force : true,
+  logging: console.log()  
+}).then(function(){
 
 })
 
