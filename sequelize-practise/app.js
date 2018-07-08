@@ -18,12 +18,12 @@ connection.sync().then(function(){
   });
 });
 
-// connection.sync().then(function(){
-//   Article.create({
-//     title: 'demo title',  
-//     body: 'asdad Lorem ipsum fdsadsd'
-//   });
-// });
+connection.sync().then(function(){
+  Article.create({
+    title: 'demo title',  
+    body: 'asdad Lorem ipsum fdsadsd'
+  });
+});
 
 // connection.sync().then(function(){
 //   Article.findAll().then(function(articles){
