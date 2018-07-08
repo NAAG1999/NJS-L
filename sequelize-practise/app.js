@@ -9,7 +9,9 @@ var connection = new Sequelize('demo_schema', 'root', '', {
 var Article = connection.define('article',{
     slug:{
       type: Sequelize.STRING,
-      //primaryKey : true
+      // NOTE that setting slug as primarykey: true will remove the id column
+      //      and will set the slug as primary in the mysql workbench
+      primaryKey : true 
     },
     title: {
       type: Sequelize.STRING,
