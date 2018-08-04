@@ -42,3 +42,21 @@ connection
     .catch(function(error){
         console.log(error);
     })
+
+    /*  Syntax for inserting multiple values in our database :
+
+        .then(function(){
+            Article.bulkCreate([
+                {
+                    title: 'Article 1',
+                    body: 'Article 1'
+                },
+                {
+                    title : 'Article 2',
+                    body: 'Article 2'
+                }
+            ])
+        })
+    
+    
+    */
