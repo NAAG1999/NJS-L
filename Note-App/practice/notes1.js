@@ -2,7 +2,8 @@ const fs = require('fs');
 
 console.log('Starting Application');
 
-module.exports.addNote = function() {
-        fs.appendFileSync('greetings.txt', 'Eureka it works' + '\n');
-        return 'Note added';
+module.exports.addNums = function(a,b) {
+        //fs.appendFileSync('greetings.txt', 'Eureka it works' + '\n');
+        
+        return a+b;
     }
