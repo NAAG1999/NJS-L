@@ -3,8 +3,8 @@ console.log('Starting app.js');
 const fs = require('fs');// 3rd party modules
 const _ = require('lodash');
 const yargs = require('yargs');
-const notes = require('./notes.js');//modules we created (the other file we want to use will be imported using this)
 
+const notes = require('./notes.js');//modules we created (the other file we want to use will be imported using this)
 
 const argv = yargs.argv;// returns an array containing the command line arguments passed to it
 var command = argv._[0];// var command = process.argv[2];
