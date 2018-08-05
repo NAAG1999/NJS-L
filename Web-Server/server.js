@@ -63,5 +63,6 @@ app.listen(port, function(){
     console.log(`Server is up on port ${port}`);
 });
 
+
 //NOTE: When using footers, when we are restarting our server, then in the terminal we have to use the command
 // nodemon server.js -e js,hbs ..... Last two being the args which you want to see the output of ;)
