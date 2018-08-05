@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/about', (req,res) =>{
-    res.send('Welcome to the about of this web page');
+    res.render('about.hbs');
 })
 
 app.get('/bad', (req,res) =>{
