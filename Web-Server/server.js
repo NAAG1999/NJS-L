@@ -60,7 +60,7 @@ app.get('/bad', function(req,res){
 
 
 app.listen(port, function(){
-    console.log('server is up on port ' + port );
+    console.log(`Server is up on port ${port}`);
 });
 
 //NOTE: When using footers, when we are restarting our server, then in the terminal we have to use the command
