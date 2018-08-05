@@ -2,6 +2,10 @@ const express = require('express');
 
 var app = express();
 
+//using middlewares
+
+app.use(express.static(__dirname + '/public'));
+
 // app.get('/', function(req,res) {
 //     res.send('<h1>Hello Express!</h1>');
 // });
@@ -29,4 +33,10 @@ app.get('/bad', (req,res) =>{
         errorMessage : 'Something bad just happened. Fault is at our end'
     })
 })
-app.listen(3000);
+// app.listen(3000, () =>{
+//     console.log('Server is up and running on port 3000')
+// });
+
+app.listen(3000, function(){
+    console.log("Server is up and running on port 3000");
+});
