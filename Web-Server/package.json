@@ -1,11 +1,10 @@
 {
-  "name": "web-server",
+  "name": "node-web-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "_comment": "Following start is used to replace the usage of command node server.js",
     "start": "node server.js" 
   },
   "author": "",
