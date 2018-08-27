@@ -9,7 +9,6 @@ var app = express();
 //partials are used to re-use that  piece of info from our view files
 hbs.registerPartials(__dirname + '/views/partials')
 
-
 app.use(function (req, res, next) {
     var now = new Date().toString();
     var log = `${now}: ${req.method} ${req.url}`;
