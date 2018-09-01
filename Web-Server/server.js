@@ -25,7 +25,6 @@ app.use(function (req, res, next) {
 // });
 app.use(express.static(__dirname + '/public'));
 app.set('vie engine', 'hbs');
-
 hbs.registerHelper('getCurrentYear', () =>{
     return new Date().getFullYear()
 })
