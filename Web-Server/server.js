@@ -30,7 +30,6 @@ app.set('vie engine', 'hbs');
 hbs.registerHelper('getCurrentYear', () =>{
     return new Date().getFullYear()
 })
-
 hbs.registerHelper('screamIt', function(text){
     return text.toUpperCase();
 })
