@@ -54,6 +54,9 @@ app.get('/bad', function(req,res){
     });
 });
 
+app.get('/maint', function(req,res){
+    res.render('maintenance.hbs')
+});
 
 app.listen(port, function(){
     console.log(`Server is up on port ${port}`);
