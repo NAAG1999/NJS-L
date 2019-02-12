@@ -26,10 +26,11 @@ app.use(function (req, res, next) {
 app.use(express.static(__dirname + '/public'));
 
 app.set('vie engine', 'hbs');
-
+//ES6 way here
 hbs.registerHelper('getCurrentYear', () =>{
     return new Date().getFullYear()
 })
+//ES5 way here
 hbs.registerHelper('screamIt', function(text){
     return text.toUpperCase();
 })
